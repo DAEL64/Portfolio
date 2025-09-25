@@ -10,12 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/fiber": "^9.3.0",
     "@tailwindcss/vite": "^4.1.13",
+    "framer-motion": "^12.23.22",
     "gsap": "^3.13.0",
+    "motion": "^12.23.21",
+    "popmotion": "^11.0.5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.1",
-    "tailwindcss": "^4.1.13"
+    "tailwindcss": "^4.1.13",
+    "three": "^0.180.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

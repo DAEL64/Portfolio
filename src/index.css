@@ -3,6 +3,7 @@
 :root {
   --darkGold: #aa6c39;
 
+  height: 2000px;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #111111;
