@@ -23,12 +23,12 @@ export default function Header() {
 
   return (
     <>
-      <div className="border-b-1 w-full my-2 border-b-amber-500 poiret-one-regular">
+      <div className="border-b-1 w-full text-amber-50 my-2 border-b-amber-500 poiret-one-regular">
         <div className="flex items-center justify-between mx-5 my-2">
           <motion.div
             whileHover={{
               scale: 1.05,
-              textShadow: "0px 0px 8px rgb(255,191,0)",
+              textShadow: "0px 0px 7px rgb(255,191,0)",
             }}
             className="name border-y-amber-500 w-fit p-2 hover:cursor-default text-2xl font-bold transition-all duration-300"
           >

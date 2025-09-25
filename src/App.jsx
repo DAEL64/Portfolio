@@ -3,11 +3,11 @@ import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import { useTransform, useScroll, useTime } from "framer-motion";
 import { degreesToRadians, progress, mix } from "popmotion";
 
-const color = "#FFC107";
+const color = "#FFA000";
 
 const Icosahedron = () => (
   <mesh rotation-x={0.35}>
-    <icosahedronGeometry args={[1.5, 1]} />
+    <icosahedronGeometry args={[1.8, 3]} />
     <meshBasicMaterial wireframe color={color} />
   </mesh>
 );
@@ -16,10 +16,10 @@ const Star = ({ p }) => {
   const ref = useRef();
 
   useLayoutEffect(() => {
-    const distance = mix(2, 3.5, Math.random());
+    const distance = mix(5, 5, 0);
     const yAngle = mix(
-      degreesToRadians(80),
-      degreesToRadians(100),
+      degreesToRadians(90),
+      degreesToRadians(90),
       Math.random()
     );
     const xAngle = degreesToRadians(360) * p;
@@ -28,13 +28,13 @@ const Star = ({ p }) => {
 
   return (
     <mesh ref={ref}>
-      <boxGeometry args={[0.225, 0.225, 0.225]} />
+      <boxGeometry args={[1, 0.225, 1]} />
       <meshBasicMaterial wireframe color={color} />
     </mesh>
   );
 };
 
-function Scene({ numStars = 100 }) {
+function Scene({ numStars = 50 }) {
   const gl = useThree((state) => state.gl);
   const { scrollYProgress } = useScroll();
   const yAngle = useTransform(
@@ -42,20 +42,21 @@ function Scene({ numStars = 100 }) {
     [0, 1.5],
     [0.001, degreesToRadians(180)]
   );
-  const distance = useTransform(scrollYProgress, [0, 1], [10, 3]);
+  const distance = useTransform(scrollYProgress, [0, 1.5], [10, 3]);
   const time = useTime();
 
   useFrame(({ camera }) => {
     camera.position.setFromSphericalCoords(
       distance.get(),
       yAngle.get(),
-      time.get() * 0.0005
+      scrollYProgress.get() * 3,
+      // time.get() * 0.0005
     );
     camera.updateProjectionMatrix();
     camera.lookAt(0, 0, 0);
   });
 
-  useLayoutEffect(() => gl.setPixelRatio(0.3));
+  useLayoutEffect(() => gl.setPixelRatio(1));
 
   const stars = [];
   for (let i = 0; i < numStars; i++) {
@@ -73,14 +74,16 @@ function Scene({ numStars = 100 }) {
 // Background Component
 const ThreeBackground = () => {
   return (
-    <div style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      width: '100vw',
-      height: '100vh',
-      zIndex: -1
-    }}>
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        zIndex: -1,
+      }}
+    >
       <Canvas gl={{ antialias: false }}>
         <Scene />
       </Canvas>
@@ -93,7 +96,6 @@ export default function App() {
   return (
     <>
       <ThreeBackground />
-      
     </>
   );
-};
+}
