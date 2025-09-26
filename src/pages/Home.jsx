@@ -35,7 +35,7 @@ export default function Home() {
           </div>
           <div>
             <motion.svg
-              className="inline-block bg-amber-400 -mt-30"
+              className="inline-block bg-amber-400 -mt-20"
               style={{
                 WebkitMaskImage: `url(${face})`,
                 WebkitMaskRepeat: "no-repeat",

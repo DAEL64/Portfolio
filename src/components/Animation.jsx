@@ -49,7 +49,7 @@ function Scene({ numStars = 50 }) {
     camera.position.setFromSphericalCoords(
       distance.get(),
       yAngle.get(),
-      scrollYProgress.get() * 3
+      scrollYProgress.get() *3
     );
     camera.updateProjectionMatrix();
     camera.lookAt(0, 0, 0);
