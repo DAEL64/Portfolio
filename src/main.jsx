@@ -9,8 +9,8 @@ import About from "./pages/About.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <Animation />
     <Header />
+    <Animation />
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/home" element={<Home />} />
