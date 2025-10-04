@@ -2,8 +2,8 @@ import "../styles/skills.css";
 import { Braces, CodeXml, Earth, HeartHandshake } from "lucide-react";
 import python from "../assets/python.png";
 import C from "../assets/C.png";
-import firebase from "../assets/firebase.png"
-import mongoDB from "../assets/mongoDB.png"
+import firebase from "../assets/firebase.png";
+import mongoDB from "../assets/mongoDB.png";
 
 export default function Skills() {
   return (
@@ -12,7 +12,7 @@ export default function Skills() {
         <div className="w-4/5 mx-auto flex flex-col mt-20">
           {/* Section title */}
           <div className="flex w-full justify-center text-5xl font-extrabold tracking-wide mb-12">
-            <h2 className="text-amber-500">Skills</h2>
+            <h2>Skills</h2>
           </div>
 
           <div className="flex items-center justify-between min-h-full">
@@ -64,6 +64,7 @@ export default function Skills() {
                       { lang: "Georgian", level: "Native" },
                       { lang: "English", level: "Fluent" },
                       { lang: "Russian", level: "Fluent" },
+                      { lang: "German", level: "begginer" },
                     ].map((item, i) => (
                       <div
                         key={i}

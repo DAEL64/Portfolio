@@ -8,10 +8,10 @@ export default function About() {
               <p>About me</p>
             </div>
             <div className="w-full flex gap-5 justify-around mt-40">
-              <div className="bg-gray-900 rounded-xl w-[450px] h-[350px]">
+              <div className="bg-stone-900 rounded-xl w-[450px] h-[350px]">
                 <p>Hello, I am Andria</p>
               </div>
-              <div className="bg-amber-500 rounded-xl w-[450px] h-[350px]">
+              <div className="bg-stone-900 rounded-xl w-[450px] h-[350px]">
                 <p>Hello, I am Andria</p>
               </div>
             </div>
