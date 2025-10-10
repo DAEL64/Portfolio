@@ -1,17 +1,34 @@
+import { useEffect } from "react";
+import "../styles/about.css";
+
 export default function About() {
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show");
+        }
+      });
+    }, {});
+    const aboutElements = document.querySelectorAll(".aboutCard");
+    aboutElements.forEach((el) => observer.observe(el));
+  });
+
   return (
     <>
       <section id="about">
         <div className="h-dvh poiret-one-regular flex flex-col pt-30">
-          <div>
-            <div className="flex w-full justify-center text-5xl">
-              <p>About me</p>
-            </div>
-            <div className="w-full flex gap-5 justify-around mt-40">
-              <div className="bg-stone-900 rounded-xl w-[450px] h-[350px]">
+          <div className="w-full flex justify-around gap-5 mt-40">
+            <div className="cardWrap">
+              <div className="aboutCard bg-stone-900 rounded-md min-w-96 min-h-80 flex p-2">
                 <p>Hello, I am Andria</p>
               </div>
-              <div className="bg-stone-900 rounded-xl w-[450px] h-[350px]">
+            </div>
+
+            <div className="cardWrap">
+              <div className="aboutCard bg-stone-900 rounded-md min-w-96 min-h-80 flex p-2">
                 <p>Hello, I am Andria</p>
               </div>
             </div>

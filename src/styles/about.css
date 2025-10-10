@@ -1,0 +1,33 @@
+.aboutCard {
+  opacity: 0;
+  clip-path: inset(0 50% 0 50%);
+  transform: scale(0.9);
+  transition: all 600ms ease;
+  position: relative;
+}
+
+.aboutCard.show {
+  opacity: 1;
+  clip-path: inset(0 0 0 0);
+  transform: scale(1);
+}
+
+.cardWrap {
+  position: relative;
+  display: inline-block; 
+}
+
+.cardWrap::before,
+.cardWrap::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 10px;
+  background: rgb(245 158 11); 
+  z-index: -1; 
+}
+
+.cardWrap::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
