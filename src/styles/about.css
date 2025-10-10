@@ -15,7 +15,9 @@
 .cardWrap {
   position: relative;
   display: inline-block; 
+  transition: all 1000ms ease;
 }
+
 
 .cardWrap::before,
 .cardWrap::after {
@@ -28,6 +30,6 @@
 }
 
 .cardWrap::before{
-  filter: blur(1.5rem);
+  filter: blur(2.5rem);
   opacity: 0.5;
 }

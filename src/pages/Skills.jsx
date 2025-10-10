@@ -11,7 +11,7 @@ export default function Skills() {
       <div className="h-dvh poiret-one-regular flex flex-col">
         <div className="w-4/5 mx-auto flex flex-col mt-20">
           {/* Section title */}
-          <div className="flex w-full justify-center text-5xl font-extrabold tracking-wide mb-12">
+          <div className="flex w-full justify-center text-5xl font-medium tracking-wide mb-12">
             <h2>Skills</h2>
           </div>
 

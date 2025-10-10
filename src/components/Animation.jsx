@@ -2,6 +2,7 @@ import { useLayoutEffect } from "react";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import { useTransform, useScroll } from "framer-motion";
 import { degreesToRadians, progress, mix } from "popmotion";
+import { useRef } from "react";
 
 const color = "#FFA000";
 
@@ -12,28 +13,28 @@ const Icosahedron = () => (
   </mesh>
 );
 
-// uncomment for additional animations
-// const Star = ({ p }) => {
-//   const ref = useRef();
 
-//   useLayoutEffect(() => {
-//     const distance = mix(5, 5, 0);
-//     const yAngle = mix(
-//       degreesToRadians(90),
-//       degreesToRadians(90),
-//       Math.random()
-//     );
-//     const xAngle = degreesToRadians(360) * p;
-//     ref.current.position.setFromSphericalCoords(distance, yAngle, xAngle);
-//   });
+const Star = ({ p }) => {
+  const ref = useRef();
 
-//   // return (
-//   //   <mesh ref={ref}>
-//   //     <boxGeometry args={[1, 0.225, 1]} />
-//   //     <meshBasicMaterial wireframe color={color} />
-//   //   </mesh>
-//   // );
-// };
+  useLayoutEffect(() => {
+    const distance = mix(5, 5, 0);
+    const yAngle = mix(
+      degreesToRadians(90),
+      degreesToRadians(90),
+      Math.random()
+    );
+    const xAngle = degreesToRadians(360) * p;
+    ref.current.position.setFromSphericalCoords(distance, yAngle, xAngle);
+  });
+
+  return (
+    <mesh ref={ref}>
+      <boxGeometry args={[1, 0.225, 1]} />
+      <meshBasicMaterial wireframe color={color} />
+    </mesh>
+  );
+};
 
 function Scene({ numStars = 50 }) {
   const gl = useThree((state) => state.gl);
@@ -49,7 +50,7 @@ function Scene({ numStars = 50 }) {
     camera.position.setFromSphericalCoords(
       distance.get(),
       yAngle.get(),
-      scrollYProgress.get() *3
+      scrollYProgress.get()
     );
     camera.updateProjectionMatrix();
     camera.lookAt(0, 0, 0);
@@ -57,17 +58,16 @@ function Scene({ numStars = 50 }) {
 
   useLayoutEffect(() => gl.setPixelRatio(1));
 
-  // uncomment for additional animations
-  // const stars = [];
-  // for (let i = 0; i < numStars; i++) {
-  //   stars.push(<Star key={i} p={progress(0, numStars, i)} />);
-  // }
+ 
+  const stars = [];
+  for (let i = 0; i < numStars; i++) {
+    stars.push(<Star key={i} p={progress(0, numStars, i)} />);
+  }
 
   return (
     <>
       <Icosahedron />
-      {/* additional */}
-      {/* {stars} */}
+      {stars}
     </>
   );
 }

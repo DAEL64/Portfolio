@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 export default function Header() {
   return (
     <>
-      <div className="border-b-1 sticky z-50 top-0 w-full text-amber-50 my-2 border-b-amber-500 poiret-one-regular">
+      <div className="border-b-1 bg-[#111111] opacity-85 sticky z-50 top-0 w-full text-amber-50 my-2 border-b-amber-500 poiret-one-regular">
         <div className="flex items-center justify-between mx-5 my-2">
           <motion.div
             whileHover={{

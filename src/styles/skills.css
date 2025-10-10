@@ -19,11 +19,11 @@
   z-index: -1;
   border-radius: 10px;
   background-image: conic-gradient(from var(--angle), transparent 50%, gold);
-  animation: 3s spin linear infinite;
+  animation: 6s spin linear infinite;
 }
 
 .card::before {
-  filter: blur(1.5rem);
+  filter: blur(1.3rem);
   opacity: 0.5;
 }
 
