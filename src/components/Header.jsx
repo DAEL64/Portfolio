@@ -40,7 +40,7 @@ export default function Header() {
                   textShadow: "0px 0px 8px rgb(255,191,0)",
                 }}
               >
-                About ME
+                About us
               </motion.p>
             </a>
             <a
