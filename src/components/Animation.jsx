@@ -8,7 +8,7 @@ const color = "#FFA000";
 
 const Icosahedron = () => (
   <mesh rotation-x={0.35}>
-    <icosahedronGeometry args={[2.5, 3]} />
+    <icosahedronGeometry args={[3, 7]} />
     <meshBasicMaterial wireframe color={color} />
   </mesh>
 );

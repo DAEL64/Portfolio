@@ -14,7 +14,7 @@ export default function Header() {
             }}
             className="name border-y-amber-500 w-fit p-2 hover:cursor-default text-2xl font-bold transition-all duration-300"
           >
-            <p>Andria</p>
+            <p>Andria Janelidze</p>
           </motion.div>
           <motion.div className="flex justify-between px-2 gap-2">
             <a
