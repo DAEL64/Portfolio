@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function Home() {
   return (
     <section id="home">
-      {/* Changed flex to flex-col for mobile, lg:flex-row for desktop */}
+     
       <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10 px-6 md:px-20">
         <div className="w-full relative lg:max-w-2xl h-screen pt-10 lg:h-fit text-center lg:text-left poiret-one-regular">
           <p className="text-4xl sticky top-20 lg:static lg:top-0 lg:text-5xl mb-4">Hi, i am Andria</p>

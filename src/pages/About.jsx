@@ -21,15 +21,15 @@ export default function About() {
 
   return (
     <section id="about">
-      {/* Changed pt-30 to responsive padding and h-dvh to min-h-screen for mobile content */}
+    
       <div className="min-h-screen poiret-one-regular flex flex-col pt-20 md:pt-30">
         <div className="w-full flex justify-center text-4xl md:text-5xl font-medium">
           <p>About me</p>
         </div>
-        {/* Adjusted mt-40 to mt-10 for mobile, mt-24 for desktop */}
+
         <div className="w-full px-5 flex justify-center items-center gap-5 mt-10 md:mt-24">
           <div className="cardWrap w-full max-w-4xl">
-            {/* Removed min-w-96 and max-w-150 for responsive w-full */}
+        
             <div className="aboutCard bg-stone-900 rounded-md w-full min-h-80 flex p-6 md:p-8">
               <ScrambledText
                 radius={100}
