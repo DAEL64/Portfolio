@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import "../styles/about.css";
 import ScrambledText from "../animation_hooks/ScrambledText";
 
-
 export default function About() {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -21,22 +20,25 @@ export default function About() {
   }, []);
 
   return (
-    <>
-      <section id="about">
-        <div className="h-dvh poiret-one-regular flex flex-col pt-30">
-          <div className="w-full flex justify-center text-5xl font-medium">
-            <p>About me</p>
-          </div>
-          <div className="w-full flex justify-center  items-center gap-5 mt-40">
-            <div className="cardWrap">
-              <div className="aboutCard bg-stone-900 max-w-150 rounded-md min-w-96 min-h-80 flex p-2">
-                <ScrambledText
-                  radius={100}
-                  duration={1}
-                  speed={0.5}
-                  scrambleChars=".:"
-                >
-                  <span className="line-clamp-1">Hi! I am <span className="text-amber-500">Andria Janelidze</span>, a front-end developer from Georgia,
+    <section id="about">
+      {/* Changed pt-30 to responsive padding and h-dvh to min-h-screen for mobile content */}
+      <div className="min-h-screen poiret-one-regular flex flex-col pt-20 md:pt-30">
+        <div className="w-full flex justify-center text-4xl md:text-5xl font-medium">
+          <p>About me</p>
+        </div>
+        {/* Adjusted mt-40 to mt-10 for mobile, mt-24 for desktop */}
+        <div className="w-full px-5 flex justify-center items-center gap-5 mt-10 md:mt-24">
+          <div className="cardWrap w-full max-w-4xl">
+            {/* Removed min-w-96 and max-w-150 for responsive w-full */}
+            <div className="aboutCard bg-stone-900 rounded-md w-full min-h-80 flex p-6 md:p-8">
+              <ScrambledText
+                radius={100}
+                duration={1}
+                speed={0.5}
+                scrambleChars=".:"
+              >
+                <span className="text-sm md:text-lg leading-relaxed w-full">
+                  Hi! I am <span className="text-amber-500">Andria Janelidze</span>, a front-end developer from Georgia,
                   born in 2006. With several years of experience in JavaScript,
                   HTML, CSS, and React.js/TSX, I specialize in crafting modern,
                   efficient, and visually engaging web experiences. My goal is
@@ -50,13 +52,13 @@ export default function About() {
                   front-end development. For me, every project is an opportunity
                   to combine technical precision with aesthetic quality,
                   creating digital experiences that are both functional and
-                  inspiring.</span>
-                </ScrambledText>
-              </div>
+                  inspiring.
+                </span>
+              </ScrambledText>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

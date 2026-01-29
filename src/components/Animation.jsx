@@ -83,6 +83,7 @@ const ThreeBackground = () => {
         width: "100vw",
         height: "100vh",
         zIndex: -1,
+        pointerEvents: "none",
       }}
     >
       <Canvas gl={{ antialias: false }}>
