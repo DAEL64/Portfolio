@@ -30,7 +30,7 @@ export default function Header() {
   return (
     <header className="sticky m-0 top-0 z-50 w-full poiret-one-regular">
 
-      <div className="absolute inset-0 bg-[#111111]/90 backdrop-blur-md border-b border-amber-500/20" />
+      <div className="absolute inset-0 bg-[#111111]/90 backdrop-blur-lg border-b border-amber-500/20" />
 
       <div className="mx-auto relative px-6 h-20 flex items-center justify-between text-amber-50">
         <motion.div
@@ -69,7 +69,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden relative bg-[#111111]/95 border-b border-amber-500/20 overflow-hidden"
+            className="md:hidden relative border-b border-amber-500/20 overflow-hidden"
           >
             <div className="flex flex-col items-center gap-6 py-8">
               {navLinks.map((link) => (
